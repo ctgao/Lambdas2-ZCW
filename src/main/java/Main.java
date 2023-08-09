@@ -18,15 +18,20 @@ public class Main {
                 Person.Sex.FEMALE, "nachos@omnom.com"));
         listOfPeople.add(new Person());
 
+        //Local Class version
         printing(listOfPeople, new CheckPersonConcrete());
 
         //ANONYMOUS CLASS TIME
         CheckPerson checkPersonAnonymous = new CheckPerson(){
             public boolean test(Person p){
-                return true;
+//                return true;
+                return p.getAge() == -1;
             }
         };
         printing(listOfPeople, checkPersonAnonymous);
+
+        //LAMBDA TIME
+        printing(listOfPeople, (Person p) -> p.getGender() == Person.Sex.MALE);
     }
 
     private static void printing(List<Person> people, CheckPerson tester){
