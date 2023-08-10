@@ -31,7 +31,7 @@ public class Main {
         printing(listOfPeople, checkPersonAnonymous);
 
         //LAMBDA TIME
-        printing(listOfPeople, (Person p) -> p.getGender() == Person.Sex.MALE);
+        printing(listOfPeople, (p) -> p.getGender() == Person.Sex.MALE);
     }
 
     private static void printing(List<Person> people, CheckPerson tester){
